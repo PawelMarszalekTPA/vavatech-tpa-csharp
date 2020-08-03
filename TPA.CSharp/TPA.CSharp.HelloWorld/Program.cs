@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace TPA.CSharp.HelloWorld
 {
@@ -14,6 +15,20 @@ namespace TPA.CSharp.HelloWorld
         static void Main(string[] args)
         {
             Console.WriteLine("Hello TPA!");
+
+            Console.Write("Podaj wartość faktury: ");
+            decimal totalAmount = decimal.Parse(Console.ReadLine());
+
+            if (totalAmount>1000)
+            {
+                Console.WriteLine("Kwota większa od 1000");
+            }
+            else
+            {
+                Console.WriteLine("Kwota mnniejsza od 1000");
+            }
+
+
 
             // GenerateReport();
 
