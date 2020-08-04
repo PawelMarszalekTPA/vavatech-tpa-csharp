@@ -12,6 +12,9 @@ namespace TPA.CSharp.InvoiceCalculator
         public Customer customer;
         public DateTime dueDate;
 
+        // Nullable
+        public DateTime? postedDate;
+
         public InvoiceStatus Status;
 
         // Konstruktor - metoda uruchamiana automatycznie podczas tworzenia instancji obiektu
@@ -24,6 +27,34 @@ namespace TPA.CSharp.InvoiceCalculator
             this.number = number;
             this.customer = customer;
         }
+
+        // zaksięguj
+        public void Post()
+        {
+            if (Status == InvoiceStatus.Created)
+            {
+                Status = InvoiceStatus.Posted;
+                postedDate = DateTime.Now;
+            }
+        }
+        
+
+        // TODO: dodaj metodę do anulowania faktury - Cancel()
+
+        public void Cancel()
+        {
+            if (Status == InvoiceStatus.Created || Status == InvoiceStatus.Posted)
+            {
+                Status = InvoiceStatus.Cancelled;
+                postedDate = null;
+            }
+        }
+
+        public void Send(string email)
+        {
+            Console.WriteLine($"Sending invoice {number} to {email}");
+        }
+
     }
 
     // Typ wyliczeniowy

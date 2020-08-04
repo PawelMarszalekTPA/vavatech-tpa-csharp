@@ -38,7 +38,25 @@ namespace TPA.CSharp.InvoiceCalculator
 
             Invoice invoice = new Invoice("FV 100/2020", customer);
 
-            invoice.Status = InvoiceStatus.Posted;
+            //if (invoice.Status == InvoiceStatus.Created)
+            //{
+            //    invoice.Status = InvoiceStatus.Posted;
+            //    invoice.postedDate = DateTime.Now;
+            //}
+
+            Console.WriteLine(invoice.Status);
+
+            invoice.Post();
+
+            Console.WriteLine(invoice.Status);
+
+            int status = (int)invoice.Status;
+
+            invoice.Cancel();
+
+            invoice.Send("marcin.sulecki@gmail.com");
+
+            Console.WriteLine(invoice.Status);
 
             Console.WriteLine(invoice.number);
             Console.WriteLine(invoice.createdDate);
