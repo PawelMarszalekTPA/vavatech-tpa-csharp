@@ -25,7 +25,9 @@ namespace TPA.CSharp.InvoiceCalculator
             Console.WriteLine(invoice.number);
             Console.WriteLine(invoice.createdDate);
             Console.WriteLine(invoice.customer.name);
-            Console.WriteLine($"{invoice.customer.invoiceAddress.street} {invoice.customer.invoiceAddress.postCode} {invoice.customer.invoiceAddress.city}");
+
+            Console.WriteLine($"{invoice.customer.invoiceAddress}");
+            Console.WriteLine(invoice.customer.postAddress);
         }
 
         private static void CreateInvoiceTest2()
@@ -36,10 +38,20 @@ namespace TPA.CSharp.InvoiceCalculator
 
             Invoice invoice = new Invoice("FV 100/2020", customer);
 
+            invoice.Status = InvoiceStatus.Posted;
+
             Console.WriteLine(invoice.number);
             Console.WriteLine(invoice.createdDate);
             Console.WriteLine(invoice.customer.name);
-            Console.WriteLine($"{invoice.customer.invoiceAddress.street} {invoice.customer.invoiceAddress.postCode} {invoice.customer.invoiceAddress.city}");
+            Console.WriteLine(invoice.Status);
+
+
+            //Console.WriteLine($"{invoice.customer.invoiceAddress.street} {invoice.customer.invoiceAddress.postCode} {invoice.customer.invoiceAddress.city}");
+
+            // Console.WriteLine($"{invoice.customer.postAddress.street} {invoice.customer.postAddress.postCode} {invoice.customer.postAddress.city}");
+
+            Console.WriteLine(invoice.customer.invoiceAddress);
+            Console.WriteLine(invoice.customer.postAddress);
         }
     }
 }

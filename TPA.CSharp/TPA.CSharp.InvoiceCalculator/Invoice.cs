@@ -12,17 +12,29 @@ namespace TPA.CSharp.InvoiceCalculator
         public Customer customer;
         public DateTime dueDate;
 
+        public InvoiceStatus Status;
+
         // Konstruktor - metoda uruchamiana automatycznie podczas tworzenia instancji obiektu
         public Invoice(string number, Customer customer)
         {
             createdDate = DateTime.Now;
             dueDate = createdDate.AddDays(14);
+            this.Status = InvoiceStatus.Created;
 
             this.number = number;
             this.customer = customer;
-
         }
     }
+
+    // Typ wyliczeniowy
+    public enum InvoiceStatus
+    {
+        Created,
+        Posted,
+        Cancelled
+    }
+
+    // faktura: utworzona, zaksięgowana, anulowana
 
     public class Customer
     {
@@ -49,5 +61,13 @@ namespace TPA.CSharp.InvoiceCalculator
             this.postCode = postCode;
             this.city = city;
         }
+
+
+        // przesłanianie metody
+        public override string ToString()
+        {
+            return $"{street} \n{postCode} {city}";
+        }
+
     }
 }
