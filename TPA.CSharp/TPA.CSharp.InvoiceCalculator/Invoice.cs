@@ -15,6 +15,11 @@ namespace TPA.CSharp.InvoiceCalculator
         // Nullable
         public DateTime? postedDate;
 
+        public DateTime? GetPostedDate()
+        {
+            return postedDate;
+        }
+
         public InvoiceStatus Status;
 
         // Konstruktor - metoda uruchamiana automatycznie podczas tworzenia instancji obiektu

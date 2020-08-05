@@ -7,7 +7,64 @@ namespace TPA.CSharp.InvoiceCalculator
     {
         static void Main(string[] args)
         {
-            CreateInvoiceTest2();
+            InvoiceNumberGenerator generator = new InvoiceNumberGenerator();
+
+            Console.WriteLine(generator.GetNextNumber2());
+            Console.WriteLine(generator.GetNextNumber2());
+            Console.WriteLine(generator.GetNextNumber2());
+
+            Console.WriteLine(generator.GetNextNumber());
+            Console.WriteLine(generator.GetNextNumber());
+            Console.WriteLine(generator.GetNextNumber());
+
+
+            // PropertyTest();
+
+            // Console.WriteLine(account.saldo);
+
+            // CreateInvoiceTest2();
+
+        }
+
+        private static void PropertyTest()
+        {
+            Account account = new Account("4555677889");
+
+            //account.saldo = account.saldo + 100;
+            //account.saldo = account.saldo + 50;
+
+            account.Deposit(100);
+            account.Deposit(50);
+
+            // account.SetIsClosed(true);
+
+            account.IsClosed = true;
+
+            Console.WriteLine(account.IsClosed);
+
+            // Console.WriteLine(account.saldo);
+            Console.WriteLine(account.GetSaldo());
+
+            // account.accountNumber = "2005000000";
+
+            Console.WriteLine(account.AccountNumber);
+
+            decimal amount = 100;
+
+            //if (amount <= account.GetSaldo())
+            //{
+            //    account.saldo = account.saldo - amount;
+
+            //}
+
+            if (account.TryRedraw(amount))
+            {
+                Console.WriteLine(account.GetSaldo());
+            }
+            else
+            {
+                Console.WriteLine("Brak środków na koncie");
+            }
         }
 
         private static void CreateInvoiceTest1()
@@ -53,6 +110,12 @@ namespace TPA.CSharp.InvoiceCalculator
             int status = (int)invoice.Status;
 
             invoice.Cancel();
+
+            invoice.postedDate = DateTime.Parse("2020-08-03");
+
+            // DateTime? postedDate = invoice.GetPostedDate();
+
+            // Console.WriteLine(postedDate);
 
             invoice.Send("marcin.sulecki@gmail.com");
 
