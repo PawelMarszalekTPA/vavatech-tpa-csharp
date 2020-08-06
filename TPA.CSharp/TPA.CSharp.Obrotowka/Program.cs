@@ -17,7 +17,6 @@ namespace TPA.CSharp.Obrotowka
             ObrotowkaService obrotowkaService = new ObrotowkaService();
             Collection<Account> accounts = obrotowkaService.Get(filename);
 
-
             foreach (Account account in accounts)
             {
                 Console.WriteLine(account);
