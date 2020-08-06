@@ -9,24 +9,9 @@ namespace TPA.CSharp.Arrays
         {
             Console.WriteLine("Hello World!");
 
-            // TODO: Utwórz listę firm:
-            // TPA
-            // ABC
-            // Vavatech
+          
 
-            // wyświetl firmy
-
-            Collection<Company> companies = new Collection<Company>
-            {
-                new Company("TPA"),
-                new Company("ABC"),
-                new Company("Vavatech")
-            };
-
-            foreach (Company company in companies)
-            {
-                Console.WriteLine($"{company.Name}");
-            }
+            CollectionTest();
 
             AccountsTest();
 
@@ -39,8 +24,22 @@ namespace TPA.CSharp.Arrays
 
         }
 
+        private static void CollectionTest()
+        {
+            Collection<Company> companies = new Collection<Company>
+            {
+                new Company("TPA"),
+                new Company("ABC"),
+                new Company("Vavatech")
+            };
 
-        
+            foreach (Company company in companies)
+            {
+                Console.WriteLine($"{company.Name}");
+            }
+        }
+
+
 
         private static void AccountsTest()
         {
