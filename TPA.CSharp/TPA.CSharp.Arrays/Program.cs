@@ -9,7 +9,7 @@ namespace TPA.CSharp.Arrays
         {
             Console.WriteLine("Hello World!");
 
-          
+            CompanyWithAccountsTest();
 
             CollectionTest();
 
@@ -22,6 +22,30 @@ namespace TPA.CSharp.Arrays
 
             // Utwórz salda na 12-miesięcy (decimal) i wyświetl wszystkie miesiące
 
+        }
+
+        private static void CompanyWithAccountsTest()
+        {
+            Collection<Company> companies = new Collection<Company>();
+
+            Company company0 = new Company("TPA");
+            Company company1 = new Company("ABC");
+            Company company2 = new Company("VAVA");
+            companies.Add(company0);
+            companies.Add(company1);
+            companies.Add(company2);
+            Account account1 = new Account("10001");
+            Account account2 = new Account("10002");
+            Account account3 = new Account("10003");
+
+            company0.Accounts.Add(account1);
+            company0.Accounts.Add(account2);
+            company0.Accounts.Add(account3);
+            company1.Accounts.Add(account1);
+            company2.Accounts.Add(account3);
+
+            account3.Saldo = 3350;
+            company0.Accounts[0].Saldo = 256;
         }
 
         private static void CollectionTest()

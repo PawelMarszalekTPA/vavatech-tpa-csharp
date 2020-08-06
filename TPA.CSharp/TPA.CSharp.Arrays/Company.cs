@@ -14,6 +14,8 @@ namespace TPA.CSharp.Arrays
         public Company(string name)
         {
             this.Name = name;
+
+            this.Accounts = new Collection<Account>();
         }
 
     }
