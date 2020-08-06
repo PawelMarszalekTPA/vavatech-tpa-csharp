@@ -1,11 +1,32 @@
-﻿using System;
+﻿using CsvHelper;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using TPA.CSharp.Obrotowka.Models;
 
 namespace TPA.CSharp.Obrotowka
 {
+
+    public class ObrotowkaService2
+    {
+        public List<Account> Get(string filename)
+        {
+            StreamReader reader = new StreamReader(filename);
+
+            CsvReader csvReader = new CsvReader(reader, CultureInfo.CurrentCulture);
+
+            csvReader.Configuration.Delimiter = ";";
+
+            IEnumerable<Account> accounts = csvReader.GetRecords<Account>();
+
+            return accounts.ToList();
+        }
+    }
+
+
     public class ObrotowkaService
     {
         private Dictionary<string, int> headersMapping;

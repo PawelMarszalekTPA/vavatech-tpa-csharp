@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.Serialization;
@@ -14,8 +15,8 @@ namespace TPA.CSharp.Obrotowka
 
             string filename = "Obrotówka.csv";
 
-            ObrotowkaService obrotowkaService = new ObrotowkaService();
-            Collection<Account> accounts = obrotowkaService.Get(filename);
+            ObrotowkaService2 obrotowkaService = new ObrotowkaService2();
+            IEnumerable<Account> accounts = obrotowkaService.Get(filename);
 
             foreach (Account account in accounts)
             {

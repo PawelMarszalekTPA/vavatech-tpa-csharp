@@ -1,4 +1,4 @@
-﻿Symbol;Nazwa; SaldoBOWn ; SaldoBOMa ; ObrotyWn ; ObrotyMa ; ObrotyNWn ; ObrotyNMa ; SaldoWn ; SaldoMa ; PerSaldo 
+﻿Symbol;Name;SaldoBOWn;SaldoBOMa;ObrotyWn;ObrotyMa;ObrotyNWn;ObrotyNMa;SaldoWn;SaldoMa;PerSaldo
 10;Środki trwałe 1;36 692,96 ;0,00 ;707,88 ;0,00 ;707,88 ;0,00 ;37 400,84 ;0,00 ;37 400,84 
 11;Środki trwałe 2;14 783,01 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;14 783,01 ;0,00 ;14 783,01 
 20;Środki trwałe 3;32 133,36 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;32 133,36 ;0,00 ;32 133,36 
@@ -92,8 +92,4 @@
 850;Zakładowy Fundusz Świadczeń Socjalnych;0,00 ;316,89 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;316,89 ;-316,89 
 851;Inne fundusze specjalne;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 
 860;Wynik finansowy;0,00 ;231 428,30 ;231 428,30 ;0,00 ;231 428,30 ;0,00 ;0,00 ;0,00 ;0,00 
-870;Obowiązkowe obciążenia wyniku finansowego;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 
-;;;;;;;;;;
-;;;;;;;;;;
-;;;;;;;;;;
-;;;;;;;;;;
+870;Obowiązkowe obciążenia wyniku finansowego;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00 ;0,00
