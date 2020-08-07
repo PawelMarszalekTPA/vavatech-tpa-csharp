@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Text;
 using TPA.CSharp.ListaPlac.Models;
 
@@ -24,8 +25,34 @@ namespace TPA.CSharp.ListaPlac
 
             IEnumerable<Employee> employees = csvReader.GetRecords<Employee>();
 
-            return employees;
+            return employees.ToList();
         }
+
+        public void Add(IEnumerable<Employee> employees, string filename)
+        {
+            StreamWriter writer = new StreamWriter(filename);
+
+            writer.WriteLine("Username;Login email;Identifier;First name;Last name;Project");
+
+            foreach (Employee employee in employees)
+            {
+                writer.WriteLine($"{employee.Username};{employee.LoginEmail};{employee.Identifier};{employee.FirstName};{employee.LastName};{employee.Project}");
+            }
+
+            writer.Dispose();
+
+        }
+
+        //public void Add(IEnumerable<Employee> employees, string filename)
+        //{
+        //    StreamWriter writer = new StreamWriter(filename);
+        //    CsvWriter csvWriter = new CsvWriter(writer, CultureInfo.CurrentCulture);
+        //    csvWriter.Configuration.Delimiter = ";";
+        //    csvWriter.Configuration.RegisterClassMap<EmployeeMap>();
+        //    csvWriter.WriteRecords(employees);
+
+        //    writer.Dispose();
+        //}
     }
 
     public class EmployeeMap : ClassMap<Employee>

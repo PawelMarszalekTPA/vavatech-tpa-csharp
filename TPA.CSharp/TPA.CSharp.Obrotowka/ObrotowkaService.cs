@@ -129,6 +129,20 @@ namespace TPA.CSharp.Obrotowka
                 }
             }
 
+            // może się nigdy nie wykonać
+            while(false)
+            {
+                Console.WriteLine("Hello");
+            }
+
+            // przynajmniej raz się wykona
+            do
+            {
+                Console.WriteLine("Hello");
+            }
+            while (false);
+           
+
             // rzucenie wyjątku
             // throw new NotImplementedException();
 
