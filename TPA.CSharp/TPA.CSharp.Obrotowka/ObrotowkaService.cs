@@ -1,4 +1,5 @@
 ﻿using CsvHelper;
+using CsvHelper.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,11 +21,65 @@ namespace TPA.CSharp.Obrotowka
 
             csvReader.Configuration.Delimiter = ";";
 
+            Console.WriteLine("Wybierz firmę: ");
+            string firma = Console.ReadLine();
+
+            //if (firma == "A")
+            //{
+            //    csvReader.Configuration.RegisterClassMap<ObrotowkaAMap>();
+            //}
+            //else if (firma == "B")
+            //{
+            //    csvReader.Configuration.RegisterClassMap<ObrotowkaBMap>();
+            //}
+            //else if (firma == "C")
+            //{
+            //    csvReader.Configuration.RegisterClassMap<ObrotowkaBMap>();
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Zastosujemy mapowanie domyślne");
+            //}
+
+            // ekwiwalent powyższego zapisu
+
+            switch(firma)
+            {
+                case "A": csvReader.Configuration.RegisterClassMap<ObrotowkaAMap>(); break;
+                case "B": csvReader.Configuration.RegisterClassMap<ObrotowkaBMap>(); break;
+                case "C": csvReader.Configuration.RegisterClassMap<ObrotowkaBMap>(); break;
+
+                default: Console.WriteLine("Zastosujemy mapowanie domyślne"); break;
+            }
+
             IEnumerable<Account> accounts = csvReader.GetRecords<Account>();
 
             return accounts.ToList();
         }
     }
+
+    public class ObrotowkaAMap : ClassMap<Account>
+    {
+        public ObrotowkaAMap()
+        {
+            Map(p => p.Name).Name("Nazwa");
+            Map(p => p.ObrotyWn).Name("ObrWn");
+        }
+    }
+
+    public class ObrotowkaBMap : ClassMap<Account>
+    {
+        public ObrotowkaBMap()
+        {
+            Map(p => p.Name).Name("Nazwa");
+            Map(p => p.ObrotyWn).Name("ObrotyWn");
+        }
+    }
+
+
+
+
+
 
 
     public class ObrotowkaService
