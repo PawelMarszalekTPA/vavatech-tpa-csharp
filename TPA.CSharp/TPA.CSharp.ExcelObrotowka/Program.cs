@@ -19,6 +19,13 @@ namespace TPA.CSharp.ExcelObrotowka
             ExcelObrotowkaService excelObrotowkaService = new ExcelObrotowkaService();
         //    excelObrotowkaService.HelloWorld("hello.xlsx");
             excelObrotowkaService.Add(accounts, "output-obrotowka.xlsx");
+
+            IEnumerable<Account> accountsFromExcel = excelObrotowkaService.Get("Obrotówka.xlsx");
+
+            foreach (Account account in accountsFromExcel)
+            {
+                Console.WriteLine(account);
+            }
         }
     }
 }

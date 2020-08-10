@@ -17,5 +17,10 @@ namespace TPA.CSharp.ExcelObrotowka.Models
         public decimal SaldoWn { get; set; }
         public decimal SaldoMa { get; set; }
         public decimal PerSaldo { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Symbol} {Name} {SaldoBOMa} {SaldoBOWn}";
+        }
     }
 }
