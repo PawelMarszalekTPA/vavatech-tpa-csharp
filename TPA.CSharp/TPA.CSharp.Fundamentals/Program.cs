@@ -1,4 +1,5 @@
 ﻿using System;
+using TPA.CSharp.Fundamentals.Inheritance;
 
 namespace TPA.CSharp.Fundamentals
 {
@@ -7,6 +8,8 @@ namespace TPA.CSharp.Fundamentals
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            InheritanceTest.Test();
         }
     }
 }
