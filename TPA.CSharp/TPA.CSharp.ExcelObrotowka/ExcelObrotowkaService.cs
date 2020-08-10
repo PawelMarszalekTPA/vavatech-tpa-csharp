@@ -29,7 +29,7 @@ namespace TPA.CSharp.ExcelObrotowka
 
             Collection<Account> accounts = new Collection<Account>();
 
-            for(int i=2; i<=rows; i++)
+            for (int i = 2; i <= rows; i++)
             {
                 // TODO: przenieść mapowanie do osobnej metody
 
@@ -98,13 +98,78 @@ namespace TPA.CSharp.ExcelObrotowka
         {
             ExcelPackage excelPackage = new ExcelPackage();
 
-            ExcelWorksheet worksheet =  excelPackage.Workbook.Worksheets.Add("Konta");
+            ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Konta");
 
             worksheet.Cells[1, 1].Value = "Hello World!";
 
             FileInfo file = new FileInfo(filename);
 
             excelPackage.SaveAs(file);
+        }
+
+
+        // symbol=010.saldo -> A5
+        // map
+
+        // symbol   | worksheet | targets
+        // 010      | Arkusz1   | A5
+        // 010      | Arkusz2   | A10
+        // 040      | Arkusz1   | B10
+        // 041      | Arkusz2   | C5 
+
+        // zeszyt1.xlsx A5 = 010
+
+
+        public void UpdateTest(IEnumerable<Account> accounts)
+        {
+            Dictionary<string, List<Target>> map = new Dictionary<string, List<Target>>();
+
+            map.Add("10", new List<Target> 
+            {
+                new Target("Arkusz1", "A5"),
+                new Target("Arkusz2", "A10")
+            });
+
+            map.Add("20", new List<Target> 
+            {
+                new Target("Arkusz1", "B10")
+            });
+
+            Update(map, accounts, "Zeszyt1.xlsx");
+        }
+
+        public void Update(Dictionary<string, List<Target>> map, IEnumerable<Account> accounts, string filename)
+        {
+            FileInfo file = new FileInfo(filename);
+            ExcelPackage excelPackage = new ExcelPackage(file);
+
+            foreach (Account account in accounts)
+            {
+                if (map.TryGetValue(account.Symbol, out List<Target> targets))
+                {
+                    foreach (Target target in targets)
+                    {
+                        ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets[target.WorksheetName];
+
+                        worksheet.Cells[target.Address].Value = account.PerSaldo;
+                    }
+                }
+            }
+
+            excelPackage.SaveAs(file);
+
+        }
+    }
+
+    public class Target
+    {
+        public string WorksheetName { get; set; }
+        public string Address { get; set; }
+
+        public Target(string worksheetName, string address)
+        {
+            this.WorksheetName = worksheetName;
+            this.Address = address;
         }
     }
 }

@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Remove="Obrotówka.csv" />
     <None Remove="Obrotówka.xlsx" />
+    <None Remove="Zeszyt1.xlsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +16,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Obrotówka.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Zeszyt1.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

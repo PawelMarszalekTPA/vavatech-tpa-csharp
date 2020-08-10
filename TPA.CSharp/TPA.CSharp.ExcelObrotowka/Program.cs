@@ -26,6 +26,9 @@ namespace TPA.CSharp.ExcelObrotowka
             {
                 Console.WriteLine(account);
             }
+
+
+            excelObrotowkaService.UpdateTest(accountsFromExcel);
         }
     }
 }
