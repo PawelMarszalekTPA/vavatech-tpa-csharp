@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.Arrays", "TPA.CS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.Obrotowka", "TPA.CSharp.Obrotowka\TPA.CSharp.Obrotowka.csproj", "{4CCAADBB-C2F0-4D94-988B-F44FF7E5FAC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.ListaPlac", "TPA.CSharp.ListaPlac\TPA.CSharp.ListaPlac.csproj", "{8AA01F53-7572-4DE9-B4F0-92CAB50351E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.ListaPlac", "TPA.CSharp.ListaPlac\TPA.CSharp.ListaPlac.csproj", "{8AA01F53-7572-4DE9-B4F0-92CAB50351E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.ExcelObrotowka", "TPA.CSharp.ExcelObrotowka\TPA.CSharp.ExcelObrotowka.csproj", "{287F96D4-3F29-4C9F-9D26-B3F6CB9FF3EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.ExcelObrotowka", "TPA.CSharp.ExcelObrotowka\TPA.CSharp.ExcelObrotowka.csproj", "{287F96D4-3F29-4C9F-9D26-B3F6CB9FF3EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.Fundamentals", "TPA.CSharp.Fundamentals\TPA.CSharp.Fundamentals.csproj", "{EECC29C7-5056-4E6F-8BFC-225C414878D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{287F96D4-3F29-4C9F-9D26-B3F6CB9FF3EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{287F96D4-3F29-4C9F-9D26-B3F6CB9FF3EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{287F96D4-3F29-4C9F-9D26-B3F6CB9FF3EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EECC29C7-5056-4E6F-8BFC-225C414878D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EECC29C7-5056-4E6F-8BFC-225C414878D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EECC29C7-5056-4E6F-8BFC-225C414878D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EECC29C7-5056-4E6F-8BFC-225C414878D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
