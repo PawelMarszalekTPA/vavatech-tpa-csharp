@@ -4,6 +4,8 @@ using System.Text;
 
 namespace TPA.CSharp.Fundamentals.Inheritance
 {
+
+
     public abstract class Item  // klasa abstrakcyjna - nie można utworzyć obiektu tej klasy
     {
         public string Name { get; set; }
