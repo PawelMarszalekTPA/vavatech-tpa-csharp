@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using TPA.CSharp.ObrotowkaService.Models;
 
 namespace TPA.CSharp.ObrotowkaService
 {
@@ -16,6 +18,20 @@ namespace TPA.CSharp.ObrotowkaService
 
         public void Save(string filename)
         {
+
+        }
+
+        public IEnumerable<Account> Get()
+        {
+            // inicjalizatory
+            IEnumerable<Account> accounts = new List<Account>()
+            {
+                new Account { Symbol = "10" },
+                new Account { Symbol = "11" },
+                new Account { Symbol = "20" },
+            };
+
+            return accounts;
 
         }
     }

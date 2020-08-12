@@ -89,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TPA.CSharp.Models\TPA.CSharp.Models.csproj">
+      <Project>{26687437-3A06-4443-AC69-D2E3A4391357}</Project>
+      <Name>TPA.CSharp.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TPA.CSharp.ObrotowkaService\TPA.CSharp.ObrotowkaService.csproj">
       <Project>{14f6442f-de99-4137-a347-79adfda8d56e}</Project>
       <Name>TPA.CSharp.ObrotowkaService</Name>
