@@ -16,7 +16,7 @@ namespace TPA.CSharp.TaxCalculatorWinForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmExporter());
+            Application.Run(new FrmMain());
         }
     }
 }
