@@ -34,10 +34,11 @@ namespace TPA.CSharp.Fundamentals.Inheritance
 
         private static void InvoiceTest()
         {
-            Invoice document = new Invoice();
-            document.Number = "FV 24/2020";
+            Invoice document = new Invoice("FV 24/2020", 23);
             document.TotalAmount = 100;
-            document.Tax = 23;
+
+            // document.Number = "FV 24/2020";
+            // document.Tax = 23;
 
             Invoice invoice = new Invoice();
             invoice.Number = "FV 100/2020";

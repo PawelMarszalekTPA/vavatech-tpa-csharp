@@ -11,6 +11,18 @@ namespace TPA.CSharp.Fundamentals.Inheritance
         public string Customer { get; set; }
         public string Note { get; set; }
         public string User { get; set; }
+
+        public Document()
+        {
+
+        }
+
+        public Document(string number)
+        {
+            Number = number;
+            CreatedDate = DateTime.Today;
+        }
+
         public virtual void Print()
         {
             Console.WriteLine($"Document {Number}");
@@ -59,6 +71,18 @@ namespace TPA.CSharp.Fundamentals.Inheritance
     public class Invoice : Document
     {
         public decimal Tax { get; set; }
+
+
+        public Invoice()
+        {
+
+        }
+
+        public Invoice(string number, decimal tax)
+            : base(number)
+        {
+            Tax = tax;
+        }
 
         public void Send(string email)
         {
