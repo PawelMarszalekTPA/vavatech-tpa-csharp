@@ -1,4 +1,5 @@
 ﻿using System;
+using TPA.CSharp.Fundamentals._04_Classes;
 using TPA.CSharp.Fundamentals._09_Casting;
 using TPA.CSharp.Fundamentals._10_Strings;
 using TPA.CSharp.Fundamentals._11_Conditions;
@@ -12,6 +13,7 @@ namespace TPA.CSharp.Fundamentals
         {
             Console.WriteLine("Hello World!");
 
+            ClassesTest.Test();
 
             ConditionsTest.Test();
 

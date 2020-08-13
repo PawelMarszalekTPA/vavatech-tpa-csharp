@@ -11,6 +11,7 @@ namespace TPA.CSharp.ExcelObrotowka
     // PM> Install-Package CsvHelper
     public class CsvObrotowkaService
     {
+
         public List<Account> Get(string filename)
         {
             StreamReader reader = new StreamReader(filename);

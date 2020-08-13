@@ -8,7 +8,6 @@
   <ItemGroup>
     <Folder Include="03_Methods\" />
     <Folder Include="06_Arrays\" />
-    <Folder Include="04_Classes\" />
     <Folder Include="07_Lists\" />
   </ItemGroup>
 
