@@ -25,9 +25,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.ExcelDemo", "TPA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.TaxCalculatorWinForms", "TPA.CSharp.TaxCalculatorWinForms\TPA.CSharp.TaxCalculatorWinForms.csproj", "{E90F9AF4-09D3-4656-94F2-1392B71E8A98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.ObrotowkaService", "TPA.CSharp.ObrotowkaService\TPA.CSharp.ObrotowkaService.csproj", "{14F6442F-DE99-4137-A347-79ADFDA8D56E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.ObrotowkaService", "TPA.CSharp.ObrotowkaService\TPA.CSharp.ObrotowkaService.csproj", "{14F6442F-DE99-4137-A347-79ADFDA8D56E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.Models", "TPA.CSharp.Models\TPA.CSharp.Models.csproj", "{26687437-3A06-4443-AC69-D2E3A4391357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TPA.CSharp.Models", "TPA.CSharp.Models\TPA.CSharp.Models.csproj", "{26687437-3A06-4443-AC69-D2E3A4391357}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B7651FE8-47B9-4EB3-8539-65D410D96D3A}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.SonetaAddonHelloWorld", "TPA.CSharp.SonetaAddonHelloWorld\TPA.CSharp.SonetaAddonHelloWorld\TPA.CSharp.SonetaAddonHelloWorld.csproj", "{99D8DF3F-D8AD-4532-BBDC-8FFA2BDF6F96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.SonetaAddonHelloWorld.UI", "TPA.CSharp.SonetaAddonHelloWorld\TPA.CSharp.SonetaAddonHelloWorld.UI\TPA.CSharp.SonetaAddonHelloWorld.UI.csproj", "{FE18A818-AE0C-42DD-A682-1E74CB771DEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPA.CSharp.SonetaAddonHelloWorld.Tests", "TPA.CSharp.SonetaAddonHelloWorld\TPA.CSharp.SonetaAddonHelloWorld.Tests\TPA.CSharp.SonetaAddonHelloWorld.Tests.csproj", "{4589DC41-F565-40BC-AF68-73618B4A520D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +99,18 @@ Global
 		{26687437-3A06-4443-AC69-D2E3A4391357}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26687437-3A06-4443-AC69-D2E3A4391357}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26687437-3A06-4443-AC69-D2E3A4391357}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99D8DF3F-D8AD-4532-BBDC-8FFA2BDF6F96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D8DF3F-D8AD-4532-BBDC-8FFA2BDF6F96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99D8DF3F-D8AD-4532-BBDC-8FFA2BDF6F96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99D8DF3F-D8AD-4532-BBDC-8FFA2BDF6F96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE18A818-AE0C-42DD-A682-1E74CB771DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE18A818-AE0C-42DD-A682-1E74CB771DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE18A818-AE0C-42DD-A682-1E74CB771DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE18A818-AE0C-42DD-A682-1E74CB771DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4589DC41-F565-40BC-AF68-73618B4A520D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4589DC41-F565-40BC-AF68-73618B4A520D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4589DC41-F565-40BC-AF68-73618B4A520D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4589DC41-F565-40BC-AF68-73618B4A520D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
