@@ -35,7 +35,7 @@ namespace TPA.CSharp.Fundamentals.Inheritance
         private static void InvoiceTest()
         {
             Invoice document = new Invoice();
-            document.Number = "Dok 24/2020";
+            document.Number = "FV 24/2020";
             document.TotalAmount = 100;
             document.Tax = 23;
 
@@ -60,14 +60,26 @@ namespace TPA.CSharp.Fundamentals.Inheritance
 
             correction.Print();
 
+
+            Bill bill = new Bill();
+            bill.Number = "R 100";
+            bill.CreatedDate = DateTime.Today;
+            bill.DueDate = DateTime.Today;
+            bill.Customer = "Vavatech";
+            bill.TotalAmount = 500;
+            bill.Note = "Brak";
+
             Collection<Document> documents = new Collection<Document>();
             documents.Add(document);
             documents.Add(invoice);
             documents.Add(correction);
+            documents.Add(bill);
 
             foreach (Document currentDocument in documents)
             {
-                currentDocument.Print();    // poliformizm
+                // currentDocument.Print();    // poliformizm
+
+                Console.WriteLine(currentDocument);
 
                 // if (typeof(Document))==Invoice
                 // Invoice.Print();

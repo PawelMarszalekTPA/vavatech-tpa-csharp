@@ -13,15 +13,15 @@ namespace TPA.CSharp.Fundamentals
         {
             Console.WriteLine("Hello World!");
 
-            ClassesTest.Test();
+            //ClassesTest.Test();
 
-            ConditionsTest.Test();
+            //ConditionsTest.Test();
 
-            StringsTest.Test();
+            //StringsTest.Test();
 
             InheritanceTest.Test();
 
-            CastingTest.Test();
+            // CastingTest.Test();
         }
     }
 }

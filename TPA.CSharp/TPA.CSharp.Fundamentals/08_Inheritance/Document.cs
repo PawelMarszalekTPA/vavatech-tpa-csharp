@@ -10,9 +10,15 @@ namespace TPA.CSharp.Fundamentals.Inheritance
         public decimal TotalAmount { get; set; }
         public string Customer { get; set; }
         public string Note { get; set; }
+        public string User { get; set; }
         public virtual void Print()
         {
             Console.WriteLine($"Document {Number}");
+        }
+
+        public override string ToString()
+        {
+            return $"Number: {Number} Created At: {CreatedDate} Total: {TotalAmount} Customer: {Customer} Note: {Note} User: {User}";
         }
     }
 
@@ -46,6 +52,7 @@ namespace TPA.CSharp.Fundamentals.Inheritance
         {
             Console.WriteLine($"Rachunek {Number}");
         }
+
     }
 
 
@@ -63,6 +70,11 @@ namespace TPA.CSharp.Fundamentals.Inheritance
             Console.WriteLine($"Faktura {Number}");
         }
 
+        public override string ToString()
+        {
+            return base.ToString() + $"VAT: {Tax}";
+        }
+
 
     }
 
@@ -78,6 +90,14 @@ namespace TPA.CSharp.Fundamentals.Inheritance
         public override void Print()
         {
         }
+
+
+        public override string ToString()
+        {
+            return base.ToString() + $"Korygowany dok.: {CorrectedInvoiceCreateDate} z dn. {CorrectedInvoiceCreateDate}";
+        }
+
+
 
     }
 
