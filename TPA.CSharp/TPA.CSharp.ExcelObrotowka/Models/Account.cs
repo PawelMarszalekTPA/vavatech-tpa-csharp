@@ -20,7 +20,7 @@ namespace TPA.CSharp.ExcelObrotowka.Models
 
         public override string ToString()
         {
-            return $"{Symbol} {Name} {SaldoBOMa} {SaldoBOWn}";
+            return $"{Symbol} {Name} {SaldoBOMa} {SaldoBOWn} Saldo: {PerSaldo}";
         }
     }
 }
