@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Text;
 
@@ -7,6 +10,27 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
 {
     class InterfacesTest
     {
+        // IEnumerable -> ICollection (Add, Clear, Remove) -> IList ([], Insert, RemoveAt)
+
+        public static void IEnumerableTest()
+        {
+            IList<int> numbers = new List<int> { 545, 6, 76, 55 };
+
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+
+            numbers.Add(100);
+
+
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+
+
         public static void Test()
         {
             // wstrzykiwanie zależności (Dependency Injection)
@@ -22,7 +46,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
 
             IFileObrotowkaService obrotowkaService = dictionary[extention];
 
-            List<Account> accounts = obrotowkaService.Get("obrotówka.xlsx");
+            IEnumerable<Account> accounts = obrotowkaService.Get("obrotówka.xlsx");
 
 
             // UI
@@ -35,11 +59,13 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
         }
     }
 
+
+
     // Interface - nie ma implementacji, posiada tylko sygnatury metod
 
     public interface IFileObrotowkaService      // kontrakt (umowa pomiędzy dwoma stronami)
     {
-        List<Account> Get(string filename);
+        IEnumerable<Account> Get(string filename);
         void Add(IEnumerable<Account> accounts, string filename);
     }
 
@@ -74,7 +100,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
 
     public class XmlObrotowkaService : IFileObrotowkaService
     {
-        public List<Account> Get(string filename)
+        public IEnumerable<Account> Get(string filename)
         {
             throw new NotImplementedException();
         }
@@ -92,7 +118,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
             throw new NotImplementedException();
         }
 
-        public List<Account> Get(string filename)
+        public IEnumerable<Account> Get(string filename)
         {
             return Load(filename);
         }
@@ -106,7 +132,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
 
     public class ExcelObrotowkaService : IFileObrotowkaService
     {
-        public List<Account> Get(string filename)       // <= sygnatura metody
+        public IEnumerable<Account> Get(string filename)       // <= sygnatura metody
         {
             // ladowanie z xslt
             throw new NotImplementedException();
@@ -117,7 +143,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
         }
     }
 
-    public class Account
+    public class Account 
     {
         public string Symbol { get; set; }
         public string Name { get; set; }
@@ -130,6 +156,7 @@ namespace TPA.CSharp.Fundamentals._12_Interfaces
         public decimal SaldoWn { get; set; }
         public decimal SaldoMa { get; set; }
         public decimal PerSaldo { get; set; }
+
 
         public override string ToString()
         {
